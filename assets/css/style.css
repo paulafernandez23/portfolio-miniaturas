@@ -1,0 +1,503 @@
+/* estilos.css */
+
+/* === Fade-in global al cargar === */
+html {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+html.loaded {
+    opacity: 1;
+}
+
+/* === Modo OSCURO (predeterminado) === */
+:root {
+    --primary-color: #4db689;
+    --secondary-color: #a5d6a7;
+    --accent-color: #64ffda;
+    --bg-color: #0d1b1e;
+    --light-bg: #162426;
+    --text-color: #e0f2e9;
+    --muted-text: #a8d0c1;
+    --border-color: #2a3b3d;
+    --hover-color: #2e7d5e;
+    --footer-bg: #0a181a;
+}
+
+body {
+    font-family: 'Saira', 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* === Modo CLARO === */
+body.light-mode {
+    --primary-color: #5fc464;
+    --secondary-color: #81c784;
+    --accent-color: #1de994;
+    --bg-color: #f1f8f4;
+    --light-bg: #ffffff;
+    --text-color: #000000;
+    --muted-text: #89a194;
+    --border-color: #c8e6c9;
+    --hover-color: #1b5e20;
+    --footer-bg: #96ae9f;
+}
+
+/* === Navbar === */
+/* Navbar: se adapta al tema */
+.navbar {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Definir --navbar-bg en cada modo */
+:root {
+    --navbar-bg: rgba(13, 27, 30, 0.94); /* oscuro en modo oscuro */
+}
+
+body.light-mode {
+    --navbar-bg: rgba(193, 206, 199, 0.92); /* verde muy claro en modo claro */
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 600;
+    font-size: 1.02rem;
+}
+
+.nav-link {
+    margin: 0 8px;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    margin-right: 10px;
+}
+
+/* === Hero === */
+.hero {
+    background: linear-gradient(135deg, #0a2428 0%, #0d3b3e 100%);
+    color: white;
+    padding: 140px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-weight: 800;
+    font-size: 3.4rem;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, white, rgb(24, 152, 71));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero .lead {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-weight: 400;
+}
+
+/* === Botones === */
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(77, 182, 137, 0.3);
+}
+
+.btn-outline-light {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: rgba(165, 214, 167, 0.1);
+}
+
+/* === Secciones === */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-weight: 800;
+    font-size: 2.6rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.section-title p {
+    color: var(--muted-text);
+    margin-top: 12px;
+    font-size: 1.15rem;
+}
+
+/* === Portfolio Filters === */
+.filter-btn {
+    display: inline-block;
+    margin: 4px;
+    padding: 6px 16px;
+    background: var(--light-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.92rem;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-color);
+    color: #0d1b1e;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* === Portfolio Items === */
+.portfolio-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--light-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-img {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.05);
+}
+
+.portfolio-tag {
+    background: rgb(156, 216, 157);
+    color: #0d1b1e;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* === Calculadora y tarjetas === */
+.budget-calculator,
+.contact-form,
+.card {
+    background: var(--light-bg);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.price-display {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin: 24px 0;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.card {
+    padding: 28px !important;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* === Formularios === */
+.form-control,
+.form-select {
+    background: #1d2d30;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(77, 182, 137, 0.3);
+}
+
+/* === Footer === */
+footer {
+    background: var(--footer-bg);
+    color: var(--muted-text);
+    padding: 50px 0 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+footer h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 2.7rem; }
+}
+
+@media (max-width: 768px) {
+    section { padding: 60px 0; }
+    .portfolio-img { height: 220px; }
+    .price-display { font-size: 1.9rem; }
+    .hero { padding: 100px 0; }
+}
+
+@media (max-width: 576px) {
+    .hero h1 { font-size: 2.2rem; }
+    .navbar-nav .nav-link { margin: 8px 0; }
+}
+
+.text-muted {
+    color: var(--muted-text) !important;
+}
+
+/* Asegurar que TODO el texto use tus variables */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+label,
+.btn,
+.navbar-brand,
+.nav-link,
+.text-muted,
+.card-text,
+.footer,
+.list-unstyled li {
+    color: var(--text-color) !important;
+}
+
+/* Fondo de secciones y body */
+body,
+section,
+#contacto {
+    background-color: var(--bg-color) !important;
+}
+
+/* Fondo de tarjetas, formularios, calculadora */
+.card,
+.contact-form,
+.budget-calculator {
+    background-color: var(--light-bg) !important;
+}
+
+/* === Navbar: asegurar texto legible === */
+.navbar {
+    color: var(--text-color) !important;
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--text-color) !important;
+}
+
+/* === Formularios: inputs, selects, etc. === */
+.form-control,
+.form-select {
+    background-color: var(--light-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Cuando el input está enfocado */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(77, 182, 137, 0.25) !important;
+}
+
+/* === Opción en select (importante para navegadores como Firefox) === */
+.form-select option {
+    background-color: var(--light-bg) !important;
+    color: var(--text-color) !important;
+}
+
+/* === Etiquetas y placeholders === */
+.form-label {
+    color: var(--text-color) !important;
+}
+
+::placeholder {
+    color: var(--muted-text) !important;
+    opacity: 1 !important;
+}
+
+/* === Botones del formulario === */
+.btn {
+    color: var(--text-color) !important;
+}
+
+.btn-primary {
+    color: #0d1b1e !important; /* texto oscuro sobre verde */
+}
+
+/* === Navbar moderna con efecto glass === */
+.navbar {
+    background: rgba(0, 0, 0, 0.15) !important; /* base: translúcido */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+/* Modo claro: más suave */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* === Efecto al hacer scroll (más opacidad) === */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.35) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.92) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === Enlaces con efecto hover moderno === */
+.nav-link {
+    position: relative;
+    margin: 0 10px;
+    padding: 0.4rem 0;
+    transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+/* En modo claro, el subrayado es más oscuro */
+body.light-mode .nav-link::after {
+    background: var(--primary-color); /* ya es verde oscuro en modo claro */
+}
+
+/* === Botón de toggle de tema en navbar === */
+#theme-toggle {
+    margin-left: 12px;
+    color: var(--text-color) !important;
+    transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* === Transición suave en todo al cambiar tema === */
+:root,
+body.light-mode {
+    transition: 
+        background-color 0.4s ease,
+        color 0.3s ease;
+}
+
+/* Transición específica para elementos críticos */
+.navbar,
+section,
+footer,
+.card,
+.form-control,
+.form-select,
+.budget-calculator,
+.contact-form {
+    transition: 
+        background-color 0.4s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}

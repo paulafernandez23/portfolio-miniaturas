@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - El Pincel Errante | Galería de Miniaturas Pintadas</title>
+    <meta name="description" content="Galería de trabajos recientes: miniaturas de Warhammer, D&D, históricas y más. Niveles básico, estándar, premium y competición.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+    <img src="../img/logo.png" alt="El Pincel Errante - Pintor de miniaturas">El Pincel Errante
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../sobre-mi.html">Sobre mí</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../precios.html">Precios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contacto.html">Contacto</a></li>
+                </ul>
+                <!-- Modo oscuro/claro toggle -->
+<li class="nav-item d-flex align-items-center">
+    <button class="btn btn-sm" id="theme-toggle" aria-label="Cambiar modo">
+        <i class="bi bi-brightness-high-fill"></i>
+    </button>
+</li>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-content">
+    <section class="pt-5 pb-4">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio</h2>
+                <p>Galería de trabajos destacados</p>
+            </div>
+
+            <!-- Carrusel automático -->
+            <div id="portfolioCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-inner rounded-3 shadow">
+                    <div class="carousel-item active">
+                        <img src="img/detalle-nurgle-portfolio.jpg" class="d-block w-100" alt="Miniatura destacada 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Radukar-portfolio.jpg" class="d-block w-100" alt="Miniatura destacada 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/detalle-glotking-portfolio.jpg" class="d-block w-100" alt="Miniatura destacada 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+
+            <!-- Filtros y galería -->
+            <div class="portfolio-filters">
+                <div class="mb-3">
+                    <h5 class="mb-2">Tipo:</h5>
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="Age of Sigmar">Age of Sigmar</button>
+                    <button class="filter-btn" data-filter="40k">40k</button>
+                </div>
+                <div>
+                    <h5 class="mb-2">Nivel:</h5>
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="basico">Básico</button>
+                    <button class="filter-btn" data-filter="estandar">Estándar</button>
+                    <button class="filter-btn" data-filter="premium">Premium</button>
+                    <button class="filter-btn" data-filter="competicion">Competición</button>
+                </div>
+            </div>
+
+            <div class="row portfolio-grid g-4">
+                <!-- Repite los 6 ítems como en el ejemplo anterior -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="Age of Sigmar" data-level="estandar">
+                    <a href="img/Goblin-portfolio.jpg" class="glightbox" data-gallery="portfolio">
+                        <img src="img/Goblin-portfolio.jpg" alt="Age of Sigmar Tabletop" class="portfolio-img w-100" loading="lazy">
+                    </a>
+                    <div class="portfolio-tags mt-2">
+                        <span class="portfolio-tag">Age of Sigmar</span>
+                        <span class="portfolio-tag">Estándar</span>
+                    </div>
+                </div>
+                <!-- Añade los otros 5 ítems aquí igual que antes -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="Age of Sigmar" data-level="estandar">
+                    <a href="img/Ivya-portfolio.jpg" class="glightbox" data-gallery="portfolio">
+                        <img src="img/Ivya-portfolio.jpg" alt="Age of Sigmar Estándar" class="portfolio-img w-100" loading="lazy">
+                    </a>
+                    <div class="portfolio-tags mt-2">
+                        <span class="portfolio-tag">Age of Sigmar</span>
+                        <span class="portfolio-tag">Estándar</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="40k" data-level="estandar">
+                    <a href="img/khorne-40k-portfolio.jpg" class="glightbox" data-gallery="portfolio">
+                        <img src="img/khorne-40k-portfolio.jpg" alt="40k Estándar" class="portfolio-img w-100" loading="lazy">
+                    </a>
+                    <div class="portfolio-tags mt-2">
+                        <span class="portfolio-tag">40k</span>
+                        <span class="portfolio-tag">Estándar</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="Age of Sigmar" data-level="premium">
+                    <a href="img/detalle-glotking-portfolio.jpg" class="glightbox" data-gallery="portfolio">
+                        <img src="img/detalle-glotking-portfolio.jpg" alt="Age of Sigmar Premium" class="portfolio-img w-100" loading="lazy">
+                    </a>
+                    <div class="portfolio-tags mt-2">
+                        <span class="portfolio-tag">Age of Sigmar</span>
+                        <span class="portfolio-tag">Premium</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="Age of Sigmar" data-level="estandar">
+                    <a href="img/detalle-nurgle-portfolio.jpg" class="glightbox" data-gallery="portfolio">
+                        <img src="img/detalle-nurgle-portfolio.jpg" alt="Age of Sigmar Estándar" class="portfolio-img w-100" loading="lazy">
+                    </a>
+                    <div class="portfolio-tags mt-2">
+                        <span class="portfolio-tag">Age of Sigmar</span>
+                        <span class="portfolio-tag">Estándar</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="Age of Sigmar" data-level="estandar">
+                    <a href="img/Radukar-portfolio.jpg" class="glightbox" data-gallery="portfolio">
+                        <img src="img/Radukar-portfolio.jpg" alt="Age of Sigmar Estándar" class="portfolio-img w-100" loading="lazy">
+                    </a>
+                    <div class="portfolio-tags mt-2">
+                        <span class="portfolio-tag">Age of Sigmar</span>
+                        <span class="portfolio-tag">Estándar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h4>¡Anímate!</h4>
+                    <p>Miniaturas pintadas con mucho cariño, para que puedas disfrutarlas en el campo de batalla y presumir de ellas al mismo tiempo.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Contacto</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i> elpincelerrante@gmail.com</li>
+                        <li><i class="bi bi-telephone me-2"></i> +34 123 456 789</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 ElPincelErrante</p>
+            </div>
+    </footer>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
